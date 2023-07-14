@@ -1,5 +1,9 @@
 function page() {
-  return <div>Dashboard page</div>;
+  return (
+    <div>
+      <h1>Dashboard page</h1>
+    </div>
+  );
 }
 
 export default page;
