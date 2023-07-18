@@ -26,7 +26,7 @@ const handler = NextAuth({
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
 
-        const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/users', {
+        const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/login', {
           method: 'POST',
           body: JSON.stringify(credentials),
           headers: { 'Content-Type': 'application/json' },

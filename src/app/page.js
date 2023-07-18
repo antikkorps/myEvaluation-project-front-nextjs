@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import LoginBtn from '../../components/LoginBtn';
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
           Express.
         </p>
         <p>To get started, click on the button below.</p>
-        <a href='/login'>login to the dashboard</a>
+        <LoginBtn />
       </div>
     </main>
   );
