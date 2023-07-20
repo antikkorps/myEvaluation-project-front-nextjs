@@ -1,12 +1,13 @@
 'use client';
 import { useSession } from 'next-auth/react';
+import { LogoutButton } from '../../../components/buttons.components';
 
 export default function Profile() {
   const { data: session, status } = useSession();
 
   console.log(status);
   if (status === 'loading') {
-    return <p>Loading...</p>;
+    return <p>Please wait while loading...</p>;
   }
 
   console.log(session);
@@ -21,7 +22,10 @@ export default function Profile() {
   return (
     <>
       <h1>Your Profile Page</h1>
-      <p>Username: {user.name}</p>
+      <p>Username: {user.username}</p>
+      <pre>{JSON.stringify(session, null, 2)}</pre>
+
+      <LogoutButton />
     </>
   );
 }
