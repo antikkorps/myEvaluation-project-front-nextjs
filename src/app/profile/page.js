@@ -1,20 +1,28 @@
+'use client';
 import { useSession } from 'next-auth/react';
 
 export default function Profile() {
-  // const { data: session, status } = useSession();
+  const { data: session, status } = useSession();
 
-  // if (status === 'loading') {
-  //   return <p>Loading...</p>;
-  // }
+  console.log(status);
+  if (status === 'loading') {
+    return <p>Loading...</p>;
+  }
+
+  console.log(session);
+  // If the user is not logged in, display a message
+  if (!session) {
+    return <p>You are not logged in</p>;
+  }
+
+  // Extract the username from the session object
+  const { user } = session;
 
   return (
     <>
       <h1>Your Profile Page</h1>
-      {/* {session ? (
-        <pre>{JSON.stringify(session, null, 2)}</pre>
-      ) : (
-        <p>You are not logged in</p>
-      )} */}
+      <p>Username: {user.name}</p>
     </>
   );
 }
+Profile.auth = true;

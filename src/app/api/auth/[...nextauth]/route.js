@@ -29,11 +29,14 @@ const handler = NextAuth({
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
 
-        const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/login', {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-          headers: { 'Content-Type': 'application/json' },
-        });
+        const res = await fetch(
+          process.env.NEXT_PUBLIC_API_URL + '/users/login',
+          {
+            method: 'POST',
+            body: JSON.stringify(credentials),
+            headers: { 'Content-Type': 'application/json' },
+          }
+        );
         const user = await res.json();
         // If no error and we have user data, return it
         if (res.ok && user) {
@@ -44,6 +47,7 @@ const handler = NextAuth({
       },
     }),
   ],
+
   // pages: {
   //   signIn: '/auth/signin',
   //   signOut: '/auth/signout',
