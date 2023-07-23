@@ -1,4 +1,3 @@
-import NextAuth from 'next-auth/next';
 import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -32,7 +31,7 @@ export const options: NextAuthOptions = {
         username: {
           label: 'Username',
           type: 'text',
-          placeholder: 'your-user-name',
+          placeholder: 'your-username',
         },
         password: { label: 'Password', type: 'password' },
       },
