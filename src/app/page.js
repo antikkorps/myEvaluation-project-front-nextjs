@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import { LoginButton } from '../../components/buttons.components';
+import { LoginButton } from '../components/buttons.components';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
